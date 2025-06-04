@@ -1,0 +1,12 @@
+{
+  "name": "bass-patent-office",
+  "version": "1.0.0",
+  "description": "BASS 특허법률사무소 웹사이트",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

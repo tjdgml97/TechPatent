@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00d1b2;
+  --secondary-color: #1a1b1e;
+  --text-color: #ffffff;
+  --accent-color: #ffd700;
+  --background-dark: #0a0a0a;
+  --neon-shadow: 0 0 10px rgba(0, 209, 178, 0.5),
+    0 0 20px rgba(0, 209, 178, 0.3);
+  --gradient-primary: linear-gradient(45deg, #1a1a1a, #000, #1a1a1a);
+  --background-color: #ffffff;
+  --dark-background: #1f2937;
+  --light-gray: #f3f4f6;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-dark);
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 헤더 스타일 */
+.header {
+  width: 100%;
+}
+
+.promotion-banner {
+  background-color: var(--primary-color);
+  color: var(--background-dark);
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.login-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 히어로 섹션 스타일 */
+.hero-section {
+  min-height: 100vh;
+  padding: 60px 0;
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-shadow: var(--neon-shadow);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-description {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+  text-shadow: var(--neon-shadow);
+}
+
+/* 버튼 스타일 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--background-dark);
+  border: none;
+  box-shadow: var(--neon-shadow);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+}
+
+/* 검색바 */
+.search-bar {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 0.5rem;
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-button {
+  background: var(--primary-color);
+  border: none;
+  color: var(--background-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 통계 섹션 스타일 */
+.stats-section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.stats-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  box-shadow: var(--neon-shadow);
+}
+
+.stats-caption {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* 특징 섹션 스타일 */
+.features-section {
+  padding: 60px 0;
+}
+
+.feature-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.feature-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-box .subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+/* 체크리스트 섹션 스타일 */
+.checklist-section {
+  padding: 60px 0;
+}
+
+.question-box {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.question-mark {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  color: var(--background-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  box-shadow: var(--neon-shadow);
+}
+
+.check-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.check-list li {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+/* 푸터 스타일 */
+.footer {
+  background-color: var(--secondary-color);
+  padding: 60px 0;
+  margin-top: 60px;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-info {
+  margin-bottom: 30px;
+}
+
+.footer-info p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.copyright {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 애니메이션 키프레임 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.hero-content > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero-content > *:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.hero-content > *:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 2rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .stats-circle {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
