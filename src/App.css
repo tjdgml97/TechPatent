@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00d1b2;
+  --secondary-color: #1a1b1e;
+  --text-color: #ffffff;
+  --accent-color: #ffd700;
+  --background-dark: #0a0a0a;
+  --gradient-primary: linear-gradient(45deg, #1a1a1a, #000, #1a1a1a);
+  --background-color: #ffffff;
+  --dark-background: #1f2937;
+  --light-gray: #f3f4f6;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-dark);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Import all styles from styles.css */
+
+.pricing-section {
+  padding: 80px 0;
+  background: #000000;
+}
+
+.pricing-section h2 {
+  text-align: center;
+  color: #63e6be;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.pricing-section h3 {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.pricing-section p {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 50px;
+}

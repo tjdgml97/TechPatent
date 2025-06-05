@@ -1,0 +1,50 @@
+.quote-section {
+  padding: 60px 0;
+  background: var(--gradient-primary);
+}
+
+.quote-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quote-content h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.quote {
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 40px;
+  background: rgba(0, 209, 178, 0.1);
+}
+
+.quote-text {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.quote-caption {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .quote-content h2 {
+    font-size: 28px;
+  }
+
+  .quote-text {
+    font-size: 24px;
+  }
+
+  .quote {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,36 @@
+.stats-section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.stats-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(0, 209, 178, 0.3);
+}
+
+.stats-circle p {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.stats-caption {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .stats-circle {
+    width: 150px;
+    height: 150px;
+    font-size: 16px;
+  }
+}
