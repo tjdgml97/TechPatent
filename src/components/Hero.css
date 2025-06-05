@@ -1,0 +1,151 @@
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.4);
+  z-index: 0;
+}
+
+.promotion-banner {
+  background-color: #ff4b4b;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 100px;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo::before {
+  content: "";
+  width: 4px;
+  height: 24px;
+  background-color: #63e6be;
+  margin-right: 8px;
+}
+
+.logo-subtitle {
+  font-size: 18px;
+  color: white;
+  margin: 0;
+}
+
+.contact-button {
+  margin-left: auto;
+  background-color: #63e6be;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #4fd1ab;
+}
+
+.hero-message {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.message-text {
+  font-size: 42px;
+  color: white;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.highlight {
+  color: #63e6be;
+}
+
+.message-text strong {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 48px;
+  position: relative;
+}
+
+.message-text strong::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #ffd700;
+  z-index: -1;
+  transform: skewX(-10deg);
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 60px;
+  }
+
+  .contact-button {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .message-text {
+    font-size: 32px;
+  }
+
+  .message-text strong {
+    font-size: 36px;
+  }
+}

@@ -389,6 +389,132 @@ document.addEventListener("DOMContentLoaded", () => {
       searchInput.parentElement.style.boxShadow = "";
     });
   }
+
+  // 텍스트 타이핑 효과
+  const titles = document.querySelectorAll("h1, h2, h3");
+  titles.forEach((title) => {
+    const text = title.textContent;
+    title.textContent = "";
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        title.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 100);
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          typeText();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(title);
+  });
+
+  // 통계 원형 애니메이션
+  const statsCircle = document.querySelector(".stats-circle");
+  if (statsCircle) {
+    statsCircle.style.transform = "scale(0)";
+    statsCircle.style.transition = "transform 0.6s ease-out";
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          statsCircle.style.transform = "scale(1)";
+        }
+      });
+    });
+
+    statsObserver.observe(statsCircle);
+  }
+
+  // FAQ 토글 기능
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+      const arrow = question.querySelector(".arrow-down");
+      const isExpanded = item.classList.contains("expanded");
+
+      // 모든 FAQ 아이템을 닫기
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("expanded");
+          const otherArrow = otherItem.querySelector(".arrow-down");
+          otherArrow.style.transform = "rotate(45deg)";
+        }
+      });
+
+      // 클릭된 아이템 토글
+      item.classList.toggle("expanded");
+      arrow.style.transform = isExpanded ? "rotate(45deg)" : "rotate(-135deg)";
+    });
+  });
+
+  // 가격 카드 슬라이더 기능
+  const sliderContainer = document.querySelector(".price-cards-container");
+  const cards = document.querySelectorAll(".price-card");
+  const prevBtn = document.querySelector(".slider-btn.prev");
+  const nextBtn = document.querySelector(".slider-btn.next");
+  const dots = document.querySelectorAll(".dot");
+
+  let currentIndex = 0;
+  const totalCards = cards.length;
+
+  // 초기 상태 설정
+  updateSlider();
+
+  // 이전 버튼 클릭
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+    updateSlider();
+  });
+
+  // 다음 버튼 클릭
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalCards;
+    updateSlider();
+  });
+
+  // 도트 클릭
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateSlider();
+    });
+  });
+
+  function updateSlider() {
+    // 카드 위치 업데이트
+    const offset = -currentIndex * 100;
+    sliderContainer.style.transform = `translateX(${offset}%)`;
+
+    // 활성 카드 스타일 업데이트
+    cards.forEach((card, index) => {
+      if (index === currentIndex) {
+        card.classList.add("active");
+      } else {
+        card.classList.remove("active");
+      }
+    });
+
+    // 도트 업데이트
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
 });
 
 // CSS 애니메이션 클래스 추가
